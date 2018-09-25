@@ -1,0 +1,12 @@
+ansible == 2.5.2
+ansible-vault >= 1.0.5, < 1.1
+apache-libcloud >= 0.13
+backports.ssl-match-hostname; python_version < '3.2'
+setuptools >= 34.0
+jq >= 0.1.6
+kazoo >= 2.1
+dnspython
+boto
+boto3
+botocore
+google_compute_engine

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [ ! -d ${DIR}/ansible-install/ENV ]; then ( ${DIR}/ansible-install/setup.sh ); fi
+if [ -z ${ANSIBLE_CONFIG+x} ]; then export ANSIBLE_CONFIG="${DIR}/ansible-install/ansible.cfg"; fi
+
+source ${DIR}/ansible-install/ENV/bin/activate
+
+(cd ${DIR} && exec ansible-inventory "$@")
+
+EXIT_CODE=$?
+
+deactivate
+
+exit ${EXIT_CODE}

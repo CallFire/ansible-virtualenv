@@ -1,0 +1,7 @@
+.idea/
+.project
+.vagrant
+*.swp
+*.pyc
+*.retry
+ansible-install/ENV
